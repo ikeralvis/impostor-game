@@ -1,26 +1,100 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-image: linear-gradient(to bottom right, #0f172a, rgba(139, 92, 246, 0.2), #0f172a);
+    color: #f8fafc;
+    min-height: 100vh;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glass-card {
+    background-color: rgba(30, 41, 59, 0.5); /* bg-slate-800/50 */
+    backdrop-filter: blur(16px); /* backdrop-blur-lg */
+    border-width: 1px; /* border */
+    border-color: rgba(51, 65, 85, 0.5); /* border-slate-700/50 */
+    border-radius: 1rem; /* rounded-2xl */
+    box-shadow: 0 10px 15px -3px rgba(30, 0, 90, 0.5), 0 4px 6px -4px rgba(30, 0, 90, 0.5); /* shadow-xl */
+  }
+  
+  .glass-card-hover {
+    background-color: rgba(30, 41, 59, 0.7); /* hover:bg-slate-800/70 */
+    backdrop-filter: blur(16px);
+    border-width: 1px;
+    border-color: rgba(168, 85, 247, 0.3); /* hover:border-purple-500/30 */
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(30, 0, 90, 0.5), 0 4px 6px -4px rgba(30, 0, 90, 0.5);
+    transition: all 0.3s;
+  }
+  .glass-card-hover:hover {
+    background-color: rgba(30, 41, 59, 0.7); /* hover:bg-slate-800/70 */
+    border-color: rgba(168, 85, 247, 0.3); /* hover:border-purple-500/30 */
+  }
+
+  .btn-primary {
+    background-image: linear-gradient(to right, #7c3aed, #a78bfa);
+    color: #fff;
+    font-weight: 600;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.3), 0 4px 6px -4px rgba(139, 92, 246, 0.3);
+    transition: all 0.3s;
+    transform: scale(1);
+  }
+  .btn-primary:hover {
+    background-image: linear-gradient(to right, #a78bfa, #c4b5fd);
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.5), 0 4px 6px -4px rgba(139, 92, 246, 0.5);
+    transform: scale(1.05);
+  }
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+
+  .btn-secondary {
+    background-color: rgba(51, 65, 85, 0.5); /* bg-slate-700/50 */
+    color: #f1f5f9; /* text-slate-100 */
+    font-weight: 600; /* font-semibold */
+    padding-top: 0.75rem; /* py-3 */
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem; /* px-6 */
+    padding-right: 1.5rem;
+    border-radius: 0.75rem; /* rounded-xl */
+    border-width: 1px; /* border */
+    border-color: #475569; /* border-slate-600 */
+    transition: all 0.3s; /* transition-all duration-300 */
+    transform: scale(1);
+  }
+  .btn-secondary:hover {
+    background-color: #334155; /* hover:bg-slate-700 */
+    transform: scale(1.05); /* hover:scale-105 */
+  }
+  .btn-secondary:active {
+    transform: scale(0.95); /* active:scale-95 */
+  }
+
+  .btn-danger {
+    background-color: rgba(239, 68, 68, 0.2); /* bg-red-500/20 */
+    color: #f87171; /* text-red-400 */
+    font-weight: 600; /* font-semibold */
+    padding-top: 0.5rem; /* py-2 */
+    padding-bottom: 0.5rem;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem;
+    border-radius: 0.5rem; /* rounded-lg */
+    border-width: 1px; /* border */
+    border-color: rgba(239, 68, 68, 0.3); /* border-red-500/30 */
+    transition: all 0.3s; /* transition-all duration-300 */
+    transform: scale(1);
+  }
+  .btn-danger:hover {
+    background-color: rgba(239, 68, 68, 0.3); /* hover:bg-red-500/30 */
+    transform: scale(1.05); /* hover:scale-105 */
+  }
+  .btn-danger:active {
+    transform: scale(0.95); /* active:scale-95 */
+  }
 }

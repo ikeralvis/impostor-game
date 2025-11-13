@@ -1,0 +1,88 @@
+import { Category } from './types';
+
+export const categories: Category[] = [
+  {
+    id: 'animales',
+    name: '🐾 Animales',
+    words: [
+      { main: 'Perro', impostor: 'Gato' },
+      { main: 'León', impostor: 'Tigre' },
+      { main: 'Ballena', impostor: 'Tiburón' },
+      { main: 'Águila', impostor: 'Halcón' },
+      { main: 'Elefante', impostor: 'Rinoceronte' },
+      { main: 'Caballo', impostor: 'Cebra' },
+      { main: 'Oso', impostor: 'Panda' },
+      { main: 'Serpiente', impostor: 'Lagarto' },
+    ],
+  },
+  {
+    id: 'lugares',
+    name: '🌍 Lugares',
+    words: [
+      { main: 'Playa', impostor: 'Piscina' },
+      { main: 'Montaña', impostor: 'Colina' },
+      { main: 'Restaurante', impostor: 'Cafetería' },
+      { main: 'Biblioteca', impostor: 'Librería' },
+      { main: 'Hospital', impostor: 'Clínica' },
+      { main: 'Aeropuerto', impostor: 'Estación' },
+      { main: 'Museo', impostor: 'Galería' },
+      { main: 'Parque', impostor: 'Jardín' },
+    ],
+  },
+  {
+    id: 'comida',
+    name: '🍕 Comida',
+    words: [
+      { main: 'Pizza', impostor: 'Hamburguesa' },
+      { main: 'Helado', impostor: 'Yogur' },
+      { main: 'Café', impostor: 'Té' },
+      { main: 'Pasta', impostor: 'Arroz' },
+      { main: 'Sushi', impostor: 'Ceviche' },
+      { main: 'Tarta', impostor: 'Pastel' },
+      { main: 'Ensalada', impostor: 'Sopa' },
+      { main: 'Pan', impostor: 'Galleta' },
+    ],
+  },
+  {
+    id: 'profesiones',
+    name: '👔 Profesiones',
+    words: [
+      { main: 'Doctor', impostor: 'Enfermero' },
+      { main: 'Profesor', impostor: 'Maestro' },
+      { main: 'Chef', impostor: 'Cocinero' },
+      { main: 'Piloto', impostor: 'Azafata' },
+      { main: 'Ingeniero', impostor: 'Arquitecto' },
+      { main: 'Abogado', impostor: 'Juez' },
+      { main: 'Periodista', impostor: 'Escritor' },
+      { main: 'Músico', impostor: 'Cantante' },
+    ],
+  },
+  {
+    id: 'objetos',
+    name: '🔨 Objetos',
+    words: [
+      { main: 'Martillo', impostor: 'Destornillador' },
+      { main: 'Teléfono', impostor: 'Tablet' },
+      { main: 'Reloj', impostor: 'Cronómetro' },
+      { main: 'Lámpara', impostor: 'Linterna' },
+      { main: 'Cuchillo', impostor: 'Tijeras' },
+      { main: 'Silla', impostor: 'Taburete' },
+      { main: 'Libro', impostor: 'Revista' },
+      { main: 'Lápiz', impostor: 'Bolígrafo' },
+    ],
+  },
+  {
+    id: 'deportes',
+    name: '⚽ Deportes',
+    words: [
+      { main: 'Fútbol', impostor: 'Fútbol Sala' },
+      { main: 'Baloncesto', impostor: 'Balonmano' },
+      { main: 'Tenis', impostor: 'Pádel' },
+      { main: 'Natación', impostor: 'Buceo' },
+      { main: 'Boxeo', impostor: 'Karate' },
+      { main: 'Ciclismo', impostor: 'Motociclismo' },
+      { main: 'Esquí', impostor: 'Snowboard' },
+      { main: 'Golf', impostor: 'Minigolf' },
+    ],
+  },
+];
