@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useGameStore } from '@/lib/store';
@@ -9,7 +9,7 @@ import PlayerCard from '@/components/PlayerCard';
 import { Trophy, RotateCcw, Home } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
-export default function ResultsPage() {
+function ResultsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { players, currentRound, endRound, resetRound } = useGameStore();
@@ -84,7 +84,7 @@ export default function ResultsPage() {
             <h1 className="text-3xl font-bold">
               {correctGuess ? '¡Impostor Descubierto!' : '¡El Impostor Escapa!'}
             </h1>
-            <p className="text-slate-100">
+            <p className="text-slate-300">
               {correctGuess
                 ? 'Los jugadores ganan +1 punto'
                 : 'El impostor gana +2 puntos'}
@@ -104,13 +104,13 @@ export default function ResultsPage() {
             
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-700">
               <div className="text-center">
-                <p className="text-sm text-slate-300">Palabra correcta</p>
+                <p className="text-sm text-slate-400">Palabra correcta</p>
                 <p className="text-lg font-bold text-purple-400">
                   {currentRound.word}
                 </p>
               </div>
               <div className="text-center">
-                <p className="text-sm text-slate-300">Palabra impostor</p>
+                <p className="text-sm text-slate-400">Palabra impostor</p>
                 <p className="text-lg font-bold text-red-400">
                   {currentRound.impostorWord}
                 </p>
@@ -182,5 +182,17 @@ export default function ResultsPage() {
         </motion.div>
       </div>
     </div>
+  );
+}
+
+export default function ResultsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-2xl text-slate-300">Cargando resultados...</div>
+      </div>
+    }>
+      <ResultsContent />
+    </Suspense>
   );
 }
